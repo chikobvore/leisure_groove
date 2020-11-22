@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -14,6 +14,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('role:ROLE_SUPERADMIN');
     }
 
     /**
@@ -24,17 +25,18 @@ class HomeController extends Controller
 
     public function index()
     {
-        if($this->middleware('role:ROLE_SUPERADMIN')){
+        if(Auth::user()->myRole == 1){
             return view('superadmin.home');
         }
-        if($this->middleware('role:ROLE_ADMIN')){
+        if(Auth::user()->myRole == 2){
             return view('admin.home');
         }
-        if($this->middleware('role:ROLE_USER')){
+        if(Auth::user()->myRole == 3){
             return view('user.home');
         }
         else{
-            return view('home');
+            return view('/');
         }
     }
+    
 }

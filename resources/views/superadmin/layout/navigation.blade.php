@@ -21,8 +21,8 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="/assetmanagement/register" class="nav-link">
-                        <i class="nav-icon fas fa-book"></i>
+                    <a href="/landlords" class="nav-link">
+                        <i class="nav-icon fas fa-home"></i>
                         <p>
                             Landlords
                         </p>
@@ -31,7 +31,7 @@
 
                 <li class="nav-item has-treeview">
                     <a href="/assetmanagement/manage" class="nav-link">
-                        <i class="nav-icon fas fa-list"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
                             Tenants
                         </p>
@@ -39,8 +39,26 @@
                 </li>
 
                 <li class="nav-item has-treeview">
+                    <a href="/assetmanagement/manage" class="nav-link">
+                        <i class="nav-icon fas fa-building"></i>
+                        <p>
+                            Properties on rentals
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="/assetmanagement/manage" class="nav-link">
+                        <i class="nav-icon fas fa-building"></i>
+                        <p>
+                            Properties on sale
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item has-treeview">
                     <a href="/assetmanagement/disposal" class="nav-link">
-                        <i class="nav-icon fas fa-trash"></i>
+                        <i class="nav-icon fas fa-cogs"></i>
                         <p>
                             Service Providers
                         </p>

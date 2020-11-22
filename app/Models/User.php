@@ -80,9 +80,23 @@ class User extends Authenticatable
 
     public function hasRole($role)
     {
-      if ($this->roles()->where(‘name’, $role)->first()) {
+      if ($this->roles()->where('name', $role)->first()) {
         return true;
       }
       return false;
     }
+    public function myRole()
+    {
+      if ($this->roles()->where('name', 'ROLE_SUPERADMIN')->first()) {
+        return 1;
+      }
+      if ($this->roles()->where('name', 'ROLE_ADMIN')->first()) {
+        return 2;
+      }
+      if ($this->roles()->where('name', 'role_USER')->first()) {
+        return 3;
+      }
+      return false;
+    }
+    
 }

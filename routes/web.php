@@ -24,5 +24,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [AdminController::class,'index'])->name('admin-home');
+
 Route::get('/superadmin', [SuperAdminController::class,'index'])->name('superadmin-home');
+Route::get('/landlords', [SuperAdminController::class,'landlords'])->name('landlords');
+
 Route::get('/user', [UserController::class,'index'])->name('user-home');
