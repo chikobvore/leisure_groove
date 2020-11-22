@@ -85,18 +85,9 @@ class User extends Authenticatable
       }
       return false;
     }
-    public function myRole()
+
+    public function role()
     {
-      if ($this->roles()->where('name', 'ROLE_SUPERADMIN')->first()) {
-        return 1;
-      }
-      if ($this->roles()->where('name', 'ROLE_ADMIN')->first()) {
-        return 2;
-      }
-      if ($this->roles()->where('name', 'role_USER')->first()) {
-        return 3;
-      }
-      return false;
+      return $this->hasMany('App\Models\Role','user_id');
     }
-    
 }
