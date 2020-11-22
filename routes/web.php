@@ -17,12 +17,15 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [AdminController::class,'index'])->name('admin-home');
+
 Route::get('/superadmin', [SuperAdminController::class,'index'])->name('superadmin-home');
+Route::get('/landlords', [SuperAdminController::class,'landlords'])->name('landlords');
+
 Route::get('/user', [UserController::class,'index'])->name('user-home');

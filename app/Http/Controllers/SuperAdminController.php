@@ -16,4 +16,8 @@ class SuperAdminController extends Controller
     {
         return view('superadmin.home');
     }
+    public function landlords()
+    {
+        return view('superadmin.landlords');
+    }
 }
